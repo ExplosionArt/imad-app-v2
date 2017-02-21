@@ -1,5 +1,5 @@
-var express = require('express'); //Used to create the webserver so that we don't have to do the work of running, how to listen to port, handling http connections//
-var morgan = require('morgan'); //Output logs of our server//
+var express = require('express');
+var morgan = require('morgan'); 
 var path = require('path');
 
 var app = express();
@@ -15,7 +15,7 @@ app.get('/ui/madi.png', function (req, res) {
 });
 
 
-var port = 8080; // Use 8080 for local development because you might already have apache running on 80
+var port = 8080; 
 app.listen(8080, function () {
   console.log(`IMAD course app listening on port ${port}!`);
 });
