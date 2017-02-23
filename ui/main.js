@@ -9,9 +9,9 @@ button.onClick=function() {
     
     //Capture the response and store it in a variable//
     request.onReadyStateChange = function() {
-        if(request.readyState == XMLHttpRequest.DONE) {
+        if(request.readyState === XMLHttpRequest.DONE) {
             //Action//
-            if(request.status == 200) {
+            if(request.status === 200) {
                 var counter = request.responseText;
                 var span = document.getElementById('count');
                 span.innerHTML = counter.toString();
