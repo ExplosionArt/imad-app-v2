@@ -3,7 +3,7 @@ var button = document.getElementById('counter');
 var counter = 0;
 var span = document.getElementById('count');
 
-button.onClick = function() {
+button.onclick = function() {
     //Make a request to counter endpoint//
   //  var request= new XMLHttpRequest();
     counter = counter + 1;
