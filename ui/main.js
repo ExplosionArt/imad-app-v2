@@ -1,12 +1,13 @@
 //Counter Code//
-alert('sample')
 var button = document.getElementById("counter");
 var counter = 0;
 
 button.onClick = function() {
     //Make a request to counter endpoint//
   //  var request= new XMLHttpRequest();
-    alert("Hello");
+    counter = counter + 1;
+    var span = document.getElementById("count");
+    span.innerHTML = counter.toString();
     //Capture the response and store it in a variable//
    /* request.onReadyStateChange = function() {
         if(request.readyState === XMLHttpRequest.DONE) {
