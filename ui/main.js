@@ -1,13 +1,12 @@
-console.log('Loaded!');
 //Counter Code//
-var button=document.getElementById("counter");
-var counter=0;
+var button = document.getElementById('counter');
+var counter = 0;
 
 button.onClick = function() {
     //Make a request to counter endpoint//
   //  var request= new XMLHttpRequest();
     counter = counter + 1;
-    var span=document.getElementById("count");
+    var span = document.getElementById('count');
     span.innerHTML= counter.toString();
     
     
