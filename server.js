@@ -1,6 +1,16 @@
 var express = require('express');
 var morgan = require('morgan'); 
 var path = require('path');
+var Pool = require('pg').Pool;
+
+var config = {
+    user: 'explosionart',
+    database: 'explosionart',
+    host: 'db.imad.hasura-app.io',
+    port: '5432',
+    password: process.env.DB_PASSWORD
+};
+//Environment variable named DB_PASSWORD to prevent hackers to directly access the password//
 
 var app = express();
 app.use(morgan('combined'));
@@ -26,6 +36,11 @@ app.get('/ui/main.js', function (req, res) {
 app.get('/ui/madi.png', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'madi.png'));
 });
+
+app.get('/test-db', function(req,res) {
+    //Make a select request
+    //Return a response with the results
+}
 
 var names=[];
 app.get('/submit-name', function (req, res) {
