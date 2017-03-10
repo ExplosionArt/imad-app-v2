@@ -11,6 +11,7 @@ var config = {
     password: process.env.DB_PASSWORD
 };
 //Environment variable named DB_PASSWORD to prevent hackers to directly access the password//
+//During deployment, IMAD ensures deployment during use//
 
 var app = express();
 app.use(morgan('combined'));
@@ -37,10 +38,19 @@ app.get('/ui/madi.png', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'madi.png'));
 });
 
+var pool = new pg.Pool(config);
 app.get('/test-db', function(req,res) {
     //Make a select request
+    pool.query('SELECT * from test', function(err,result) {
+        if (err) {
+            res.status(500).send(err.toString());
+        }
+        else {
+            res.send(JSON.stringify(result));
+        }
+    });
     //Return a response with the results
-}
+});
 
 var names=[];
 app.get('/submit-name', function (req, res) {
