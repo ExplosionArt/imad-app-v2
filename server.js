@@ -1,7 +1,8 @@
 var express = require('express');
+var pg = require('pg');
 var morgan = require('morgan'); 
 var path = require('path');
-var Pool = require('pg').Pool;
+var Pool = require('pg').Pool;      //For node postgres application//
 
 var config = {
     user: 'explosionart',
