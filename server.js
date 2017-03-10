@@ -9,7 +9,7 @@ var config = {
     database: 'explosionart',
     host: 'db.imad.hasura-app.io',
     port: '5432',
-    password: process.env.DB_PASSWORD
+    password: 'db-explosionart-26719'
 };
 //Environment variable named DB_PASSWORD to prevent hackers to directly access the password//
 //During deployment, IMAD ensures deployment during use//
